@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head th:fragment = "html_head">
+	<meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <meta http-equiv="x-ua-compatible" content="ie=edge">
+	  <title>Wheely-We Plan Your Ride</title>
+	  <!-- MDB icon -->
+	  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+	  <!-- Font Awesome -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	  <!-- Google Fonts Roboto -->
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	  <!-- Bootstrap core CSS -->
+	  <link rel="stylesheet" href="css/bootstrap.min.css">
+	  <!-- Material Design Bootstrap -->
+	  <link rel="stylesheet" href="css/mdb.min.css">
+	  <!-- Your custom styles (optional) -->
+	  <link rel="stylesheet" href="css/style.css">
+	  
+	  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+	  
+</head>	  
+<body>
+<div th:fragment = "login_header">
+<header>
+  <div>
+    <span class="pagelogo"><i class="fa fa-motorcycle" aria-hidden="true"></i>
+      <span>Wheely</span>
+    </span>
+    <span class="tagline">Ride Like You Own It</span>
+  </div>
+  
+ <!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown">
+        <a th:href="@{/registration}" class="nav-link " id="navbarDropdownMenuLink" 
+          aria-haspopup="true" aria-expanded="false">Register</a>
+      </li>
+            
+      
+      <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+        <a th:href="@{/login}" class="nav-link " id="navbarDropdownMenuLink" 
+          aria-haspopup="true" aria-expanded="false">Logout</a>        
+      </li>
+      
+    </ul>
+
+
+    <!-- Links -->
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+
+</header>
+</div>
+<div th:fragments = "login_footer">
+<!-- Footer -->
+
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-5 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h4><span style="font-size:46px;
+          font-variant:bold; margin:10px; font-family: 'Lobster', cursive;">
+          <i class="fa fa-motorcycle" aria-hidden="true"></i>
+          <span>Wheely</span></h4>
+        <h4>Your memorable rides start here</h4>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h4 class="text-uppercase" style="font-size:20px;
+        font-variant:bold">Useful Links</h4>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!>Rental</a>
+          </li>
+          <li>
+            <a href="#!>Users</a>
+          </li>
+          <li>
+            <a href="#!>Pricing</a>
+          </li>
+          <li>
+            <a href="#!">Contact Us</a>
+          </li>        
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h4 class="text-uppercase">About us</h4>
+        <p>Wheely is a smart mobility solution, with a mission of making your rides hassle-free, reliable and convenient.</p>
+
+      </div>
+      <!-- Grid column -->
+
+
+    </div>
+
+  </div>
+  <!-- Footer Links -->
+
+</footer>
+<!-- Footer -->
+</div>
+  
+</body>
+</html>

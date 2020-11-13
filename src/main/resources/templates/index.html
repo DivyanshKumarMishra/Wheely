@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head th:replace = "fragments :: html_head" />
+
+<!--Header-->
+<div th:replace = "fragments :: header" />
+<!--Header-->
+
+<body>
+
+  <!-- Project is starting here--> 
+ 
+<main>
+
+  <div id="mainimage">
+    <div class="outerflex">
+      
+      <a class="btn btn-primary col-xs-4 col-sm-4 col-md-2 col-lg-2" style="background-color: #55acee" th:href="@{/rental}"  role="button">Rent Bike</a>
+      
+      <a class="btn btn-primary col-xs-4 col-sm-4 col-md-2 col-lg-2" style="background-color: #55acee;" th:href="@{/pricing}" role="button">Pricing</a>
+      
+  </div>
+</main>
+
+<div th:replace = "fragments :: footer" />
+
+
+  <!-- End your project here-->
+
+</body>
+</html>

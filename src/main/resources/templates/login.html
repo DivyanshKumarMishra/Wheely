@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html>
+    <head th:replace = "fragments :: html_head">
+    	<title>Login</title>
+    </head> 
+        
+    <body>
+	
+	<!--Header-->
+	<div th:replace = "fragments :: header" />
+	<!--Header-->
+	
+	<div class="imgoverlay">
+	
+    <!-- ADMIN REGISTERATION CARD STARTS HERE-->
+     <div class="adminlogin" >
+
+            <form class="card text-center border border-light p-5" th:action="@{/login}" method="post">
+			      
+			    <div th:if="${param.error}">
+				      <div class="alert alert-danger">Invalid username or
+				       password.
+					  </div>
+				</div>
+				
+                <p class="h4 mb-4"><b>Login</b></p>
+            
+                <!-- Email-->             
+                <input type="email" class="form-control mb-4" placeholder="E-mail" name="username" id="email">
+            
+                <!-- Password -->                
+                <input type="password"  class="form-control mb-4" placeholder="Password" name="password" id="password">
+            
+                <div class="d-flex justify-content-around">
+                    <div>
+                       
+                    </div>
+                    <div>
+                       
+                    </div>
+                </div>
+           
+                
+                <!-- Sign in button -->
+                <button class="btn btn-info mb-4" type="submit">Sign in</button>
+                
+                <!-- Register -->
+                <p>Not a member?
+                    <a th:href="@{/registration}">Register</a>
+                </p>
+                
+            </form>
+    </div>
+</div>    
+<div th:replace = "fragments :: footer" />
+
+</body>
+</html>

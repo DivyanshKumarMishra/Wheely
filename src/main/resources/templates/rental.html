@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html>
+    <head th:replace = "fragments :: html_head" />   
+          
+    <body>
+    
+    <!--Header-->
+	<div th:replace = "fragments :: header" />
+	<!--Header-->
+
+    <!-- BOOKINGS CARD STARTS HERE-->
+    
+  <div class="imgoverlay">
+  
+  <div th:if="${param.success}">
+     <div class="alert alert-info">Your booking has been confirmed</div>
+    </div>
+  
+  <div id="content">
+  <div class="card">
+    <h2>Rental</h2>
+        <div class="card-body">
+              <form class="needs-validation" novalidate th:action="@{/save}" th:object="${rental}" method="post">
+              
+              
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                     <label for="validationCustom01">First name</label>
+      					<input type="text" class="form-control" id="validationCustom01" 
+      										placeholder="First name" required th:field="*{firstName}"/>
+					      <div class="valid-feedback">
+					        Looks good!
+					      </div>                                     
+                 </div>
+                </div>
+                
+                <div class="col">
+                  <div class="form-outline">
+                    <label for="validationCustom02">Last name</label>
+				      <input type="text" class="form-control" id="validationCustom02" 
+				      			placeholder="Last name" required th:field="*{lastName}"/>
+				      <div class="valid-feedback">
+				        Looks good!
+				      </div>                  
+                  </div>
+                </div>
+              </div>
+            
+                            
+               <!-- Email input -->
+              <div class="form-outline mb-4">
+               <label for="validationCustomUsername">Email</label>
+                <input type="text" class="form-control" id="validationCustomUsername" placeholder="email"
+          aria-describedby="inputGroupPrepend" required th:field="*{email}"/>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>             
+              </div>
+              <br>
+               
+              
+               <!-- List of Bikes -->
+               
+			              Select Bike <br/><br/>
+				    <select th:field="*{bikeName}">
+					<option value=""> Nothing selected </option>
+			        <option th:each="bike:${bikes}" 
+			        		th:value="${bike.name}" 
+			        		th:utext="${bike.name}"/>
+				    </select>
+			       
+				<br/>
+				<br/>                         
+                        
+         
+              <!--DATE input-->
+              
+              <div class="form-outline mb-4">
+                <label>Departure Date</label>
+                <input type="date" name="date" th:field="*{dateOut}"/>
+              </div>
+              <br>            
+            		  
+		  <button class="btn btn-primary" type="submit">Book</button>
+             
+              </div>
+          </div> 
+      </form>
+</div>
+</div>
+</div>
+<div th:replace = "fragments :: footer" />
+
+</body>
+</html>
